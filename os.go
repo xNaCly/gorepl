@@ -1,6 +1,9 @@
 package main
 
-import "os/exec"
+import (
+	"log/slog"
+	"os/exec"
+)
 
 // Discarder discards a and returns err
 func Discarder(a any, err error) error {
@@ -8,5 +11,6 @@ func Discarder(a any, err error) error {
 }
 
 func HasGo() error {
+	slog.Debug("Checking for go compiler executable in path")
 	return Discarder(exec.LookPath("go"))
 }
