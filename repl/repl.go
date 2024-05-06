@@ -57,6 +57,7 @@ outer:
 		if line[len(line)-1] != ';' {
 			rl.SetPrompt(">>> ")
 			b.WriteString(line)
+			b.WriteRune('\n')
 			continue
 		}
 
