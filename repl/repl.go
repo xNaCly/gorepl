@@ -121,7 +121,7 @@ func (r *Repl) codeGen(w io.Writer) error {
 }
 
 func (r *Repl) compileAndRun(path string) error {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond*500)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 	defer cancel()
 	args := []string{"run", path}
 	cmd := exec.CommandContext(ctx, "go", args...)
